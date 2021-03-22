@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    function a(x) {
+        return function b(y) {
+            return function c(z) {
+                return x + y + z;
+            }
+        }
+    }
+
+    function f() {
+        var numList = Array.prototype.slice.call(arguments);
+        console.log(arguments)
+        var _f = function() {
+            console.log(arguments)
+            numList.push(...arguments);
+            return _f;
+        }
+
+        _f.toString = function(){
+            return numList.reduce((a,b) => {
+                return a + b;
+            })
+        }
+        
+        return _f;
+    }
+    console.log(a(3)(4)(5));
+    console.log(f(3)(4)(5))
+</script>
+<script>
+    t.a.videoOnLoad(
+        (function(){
+            n.e(122).then(n.bind(null,795)).then(
+                (function(e){
+                    var o=e.default;
+                    $("#activityCount").text(o.count),
+                    o.on(
+                        "change",
+                        (function(){
+                            $("#activityCount").text(o.count)
+                        })
+                    )
+                })
+            )}
+        )
+    )
+</script>
+</html>
